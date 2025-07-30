@@ -242,7 +242,7 @@ function App() {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Hi, I'm <span className="highlight">AbuCoder</span>
+              Hi, I'm <span className="highlight">Abubakr</span>
             </h1>
             <h2 className="hero-subtitle">Full Stack Developer</h2>
             <p className="hero-description">
@@ -306,7 +306,7 @@ function App() {
                   <span className="stat-label">Featured Projects</span>
                 </div>
                 <div className="stat">
-                  <span className="stat-number">2+</span>
+                  <span className="stat-number">1+</span>
                   <span className="stat-label">Years Experience</span>
                 </div>
                 <div className="stat">
