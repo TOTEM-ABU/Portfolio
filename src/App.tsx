@@ -15,6 +15,7 @@ function App() {
   const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [skillCategory, setSkillCategory] = useState("all");
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const projects: Project[] = [
     {
@@ -150,6 +151,126 @@ function App() {
     }
   };
 
+  // Cursor animation
+  useEffect(() => {
+    const cursor = document.createElement("div");
+    const cursorFollower = document.createElement("div");
+    cursor.className = "cursor";
+    cursorFollower.className = "cursor-follower";
+    document.body.appendChild(cursor);
+    document.body.appendChild(cursorFollower);
+
+    const moveCursor = (e: MouseEvent) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+
+      setTimeout(() => {
+        cursorFollower.style.left = e.clientX + "px";
+        cursorFollower.style.top = e.clientY + "px";
+      }, 100);
+    };
+
+    document.addEventListener("mousemove", moveCursor);
+
+    return () => {
+      document.removeEventListener("mousemove", moveCursor);
+      document.body.removeChild(cursor);
+      document.body.removeChild(cursorFollower);
+    };
+  }, []);
+
+  // Particle effects
+  useEffect(() => {
+    const particlesContainer = document.createElement("div");
+    particlesContainer.className = "particles";
+    document.body.appendChild(particlesContainer);
+
+    const createParticle = () => {
+      const particle = document.createElement("div");
+      particle.className = "particle";
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.animationDelay = Math.random() * 20 + "s";
+      particle.style.animationDuration = Math.random() * 10 + 10 + "s";
+      particlesContainer.appendChild(particle);
+
+      setTimeout(() => {
+        if (particle.parentNode) {
+          particle.parentNode.removeChild(particle);
+        }
+      }, 20000);
+    };
+
+    const particleInterval = setInterval(createParticle, 2000);
+
+    return () => {
+      clearInterval(particleInterval);
+      if (particlesContainer.parentNode) {
+        particlesContainer.parentNode.removeChild(particlesContainer);
+      }
+    };
+  }, []);
+
+  // Scroll-triggered animations
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, observerOptions);
+
+    // Observe all elements with scroll animation classes
+    const animatedElements = document.querySelectorAll(
+      ".scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-in, .scroll-rotate-in"
+    );
+
+    animatedElements.forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => {
+      animatedElements.forEach((el) => {
+        observer.unobserve(el);
+      });
+    };
+  }, []);
+
+  // Parallax effect
+  useEffect(() => {
+    const handleParallax = () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll(".parallax-element");
+      
+      parallaxElements.forEach((element, index) => {
+        const speed = 0.5 + (index * 0.1);
+        const yPos = -(scrolled * speed);
+        (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
+      });
+    };
+
+    window.addEventListener("scroll", handleParallax);
+    return () => window.removeEventListener("scroll", handleParallax);
+  }, []);
+
+  // Scroll progress indicator
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      setScrollProgress(scrollPercent);
+    };
+
+    window.addEventListener("scroll", updateScrollProgress);
+    return () => window.removeEventListener("scroll", updateScrollProgress);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "about", "skills", "projects", "contact"];
@@ -178,6 +299,12 @@ function App() {
 
   return (
     <div className="app">
+      {/* Scroll Progress Indicator */}
+      <div
+        className="scroll-indicator"
+        style={{ transform: `scaleX(${scrollProgress / 100})` }}
+      />
+
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
@@ -282,16 +409,16 @@ function App() {
       {/* About Section */}
       <section id="about" className="about">
         <div className="container">
-          <h2 className="section-title">About Me</h2>
+          <h2 className="section-title scroll-fade-in">About Me</h2>
           <div className="about-content">
             <div className="about-text">
-              <p>
+              <p className="scroll-slide-left">
                 I'm a passionate full stack developer from Tashkent, Uzbekistan,
                 with expertise in both frontend and backend development. My
                 journey in software development has led me to master modern web
                 technologies and create complete, scalable applications.
               </p>
-              <p>
+              <p className="scroll-slide-right">
                 Currently working at Najot Ta'lim, I bring expertise in building
                 responsive user interfaces with React and Next.js, creating
                 robust backend APIs with Node.js and NestJS, and designing
@@ -301,15 +428,15 @@ function App() {
                 applications using Socket.io.
               </p>
               <div className="about-stats">
-                <div className="stat">
+                <div className="stat scroll-scale-in">
                   <span className="stat-number">8+</span>
                   <span className="stat-label">Featured Projects</span>
                 </div>
-                <div className="stat">
+                <div className="stat scroll-scale-in">
                   <span className="stat-number">1+</span>
                   <span className="stat-label">Years Experience</span>
                 </div>
-                <div className="stat">
+                <div className="stat scroll-scale-in">
                   <span className="stat-number">15+</span>
                   <span className="stat-label">Technologies</span>
                 </div>
@@ -322,10 +449,10 @@ function App() {
       {/* Skills Section */}
       <section id="skills" className="skills">
         <div className="container">
-          <h2 className="section-title">Skills & Technologies</h2>
+          <h2 className="section-title scroll-fade-in">Skills & Technologies</h2>
 
           {/* Skill Category Filter */}
-          <div className="skill-filters">
+          <div className="skill-filters scroll-slide-left">
             <button
               className={`skill-filter ${
                 skillCategory === "all" ? "active" : ""
@@ -367,7 +494,7 @@ function App() {
                   skillCategory === "all" || skill.category === skillCategory
               )
               .map((skill, index) => (
-                <div key={index} className="skill-item">
+                <div key={index} className={`skill-item scroll-fade-in`}>
                   <div className="skill-header">
                     <span className="skill-name">{skill.name}</span>
                     <span className="skill-percentage">{skill.level}%</span>
@@ -375,7 +502,12 @@ function App() {
                   <div className="skill-bar">
                     <div
                       className="skill-progress"
-                      style={{ width: `${skill.level}%` }}
+                      style={
+                        {
+                          width: `${skill.level}%`,
+                          "--skill-width": `${skill.level}%`,
+                        } as React.CSSProperties
+                      }
                     ></div>
                   </div>
                 </div>
@@ -387,10 +519,14 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="projects">
         <div className="container">
-          <h2 className="section-title">Featured Projects</h2>
+          <h2 className="section-title scroll-fade-in">Featured Projects</h2>
           <div className="projects-grid">
-            {projects.map((project) => (
-              <div key={project.id} className="project-card">
+            {projects.map((project, index) => (
+              <div 
+                key={project.id} 
+                className={`project-card scroll-scale-in`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
                   <div className="project-overlay">
@@ -455,17 +591,17 @@ function App() {
 
       <section id="contact" className="contact">
         <div className="container">
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title scroll-fade-in">Get In Touch</h2>
           <div className="contact-content">
             <div className="contact-info">
-              <h3>Let's work together!</h3>
-              <p>
+              <h3 className="scroll-slide-left">Let's work together!</h3>
+              <p className="scroll-slide-right">
                 I'm always interested in new opportunities and exciting
                 projects. Whether you have a question or just want to say hi,
                 feel free to reach out!
               </p>
 
-              <div className="resume-download">
+              <div className="resume-download scroll-scale-in">
                 <a
                   href="/resume.pdf"
                   download="AbuCoder_Resume.pdf"
@@ -481,7 +617,7 @@ function App() {
                   href="https://github.com/TOTEM-ABU"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact-link"
+                  className="contact-link scroll-rotate-in"
                 >
                   <i className="fab fa-github"></i>
                   <span>GitHub</span>
@@ -490,7 +626,7 @@ function App() {
                   href="https://www.linkedin.com/in/aabdujalilov/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact-link"
+                  className="contact-link scroll-rotate-in"
                 >
                   <i className="fab fa-linkedin"></i>
                   <span>LinkedIn</span>
@@ -499,7 +635,7 @@ function App() {
                   href="https://t.me/guidovanrossumm"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="contact-link"
+                  className="contact-link scroll-rotate-in"
                 >
                   <i className="fab fa-telegram"></i>
                   <span>Telegram</span>
