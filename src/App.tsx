@@ -70,7 +70,8 @@ function App() {
       description:
         "Lightweight project management tool with real-time collaboration features. Includes task boards, team management, file sharing, and progress tracking with intuitive interface.",
       technologies: [
-        "JavaScript",
+        "React",
+        "TypeScript",
         "Node.js",
         "Express",
         "Socket.io",
@@ -119,13 +120,13 @@ function App() {
     { name: "NestJS", level: 80, category: "backend" },
     { name: "TypeScript", level: 85, category: "backend" },
     { name: "JavaScript", level: 90, category: "backend" },
-    { name: "MySQL", level: 80, category: "backend" },
-    { name: "MongoDB", level: 75, category: "backend" },
-    { name: "PostgreSQL", level: 70, category: "backend" },
     { name: "REST APIs", level: 85, category: "backend" },
     { name: "JWT", level: 80, category: "backend" },
     { name: "Socket.io", level: 75, category: "backend" },
     { name: "Git", level: 80, category: "backend" },
+    { name: "bcrypt", level: 75, category: "backend" },
+    { name: "Passport.js", level: 70, category: "backend" },
+    { name: "Multer", level: 75, category: "backend" },
     // Frontend Skills
     { name: "React.js", level: 85, category: "frontend" },
     { name: "Next.js", level: 80, category: "frontend" },
@@ -135,11 +136,15 @@ function App() {
     { name: "Sass/SCSS", level: 80, category: "frontend" },
     { name: "Material-UI", level: 75, category: "frontend" },
     { name: "Ant Design", level: 70, category: "frontend" },
+    { name: "Tailwind CSS", level: 75, category: "frontend" },
+    { name: "Responsive Design", level: 85, category: "frontend" },
     // Database & Tools
     { name: "MongoDB", level: 75, category: "database" },
     { name: "PostgreSQL", level: 70, category: "database" },
     { name: "MySQL", level: 80, category: "database" },
     { name: "Redis", level: 65, category: "database" },
+    { name: "Mongoose", level: 75, category: "database" },
+    { name: "Sequelize", level: 70, category: "database" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -214,7 +219,7 @@ function App() {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
+      rootMargin: "0px 0px -50px 0px",
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -246,9 +251,9 @@ function App() {
     const handleParallax = () => {
       const scrolled = window.pageYOffset;
       const parallaxElements = document.querySelectorAll(".parallax-element");
-      
+
       parallaxElements.forEach((element, index) => {
-        const speed = 0.5 + (index * 0.1);
+        const speed = 0.5 + index * 0.1;
         const yPos = -(scrolled * speed);
         (element as HTMLElement).style.transform = `translateY(${yPos}px)`;
       });
@@ -449,7 +454,9 @@ function App() {
       {/* Skills Section */}
       <section id="skills" className="skills">
         <div className="container">
-          <h2 className="section-title scroll-fade-in">Skills & Technologies</h2>
+          <h2 className="section-title scroll-fade-in">
+            Skills & Technologies
+          </h2>
 
           {/* Skill Category Filter */}
           <div className="skill-filters scroll-slide-left">
@@ -522,8 +529,8 @@ function App() {
           <h2 className="section-title scroll-fade-in">Featured Projects</h2>
           <div className="projects-grid">
             {projects.map((project, index) => (
-              <div 
-                key={project.id} 
+              <div
+                key={project.id}
                 className={`project-card scroll-scale-in`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
