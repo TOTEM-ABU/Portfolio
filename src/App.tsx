@@ -22,92 +22,71 @@ function App() {
       id: 1,
       title: "SearchLesson",
       description:
-        "Advanced lesson and file search system with intelligent filtering and categorization. Features include real-time search, file management, and user authentication with role-based access control.",
-      technologies: ["Node.js", "Express.js", "MongoDB", "JWT", "REST API"],
+        "Node.js backend project designed to handle lesson or file search functionality. It follows the MVC architecture and provides advanced search capabilities with intelligent filtering and categorization.",
+      technologies: ["Node.js", "JavaScript", "MVC Architecture", "REST API"],
       githubUrl: "https://github.com/nuriddinmahmud/SearchLesson",
       image:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center",
     },
     {
       id: 2,
-      title: "ArbaitWorking",
-      description:
-        "Comprehensive work management platform for team collaboration and project tracking. Includes task management, time tracking, and real-time notifications with modern UI/UX design.",
-      technologies: ["TypeScript", "React", "Node.js", "Express", "PostgreSQL"],
-      githubUrl: "https://github.com/TOTEM-ABU/ArbaitWorking",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&crop=center",
-    },
-    {
-      id: 3,
-      title: "FullAuthWithNest",
-      description:
-        "Complete authentication and authorization system built with NestJS. Features include JWT tokens, role-based access control, password encryption, and comprehensive security measures.",
-      technologies: ["NestJS", "TypeScript", "JWT", "Passport", "bcrypt"],
-      githubUrl: "https://github.com/TOTEM-ABU/FullAuthWithNest",
-      image:
-        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop&crop=center",
-    },
-    {
-      id: 4,
       title: "OLX-backend",
       description:
-        "Full-featured marketplace backend API similar to OLX. Includes user management, product listings, search functionality, messaging system, and payment integration.",
-      technologies: [
-        "TypeScript",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "Socket.io",
-      ],
+        "Backend project for a marketplace app with authentication and product features. Built with NestJS framework, featuring user management, product listings, and secure API endpoints.",
+      technologies: ["NestJS", "TypeScript", "Authentication", "REST API"],
       githubUrl: "https://github.com/TOTEM-ABU/OLX-backend",
       image:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center",
     },
     {
-      id: 5,
+      id: 3,
+      title: "ServicesProject",
+      description:
+        "A platform that allows users to order services (like plumbing, gardening, etc.) along with necessary tools. Designed to simplify workflows for craftsmen and service providers.",
+      technologies: ["TypeScript", "React", "Node.js", "Service Management"],
+      githubUrl: "https://github.com/TOTEM-ABU/ServicesProject",
+      image:
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&crop=center",
+    },
+    {
+      id: 4,
       title: "NornLightProject",
       description:
-        "Lightweight project management tool with real-time collaboration features. Includes task boards, team management, file sharing, and progress tracking with intuitive interface.",
+        "Modern frontend website for showcasing and selling chandeliers and lighting products. Built with React, featuring beautiful UI/UX design and e-commerce functionality.",
+      technologies: ["React", "JavaScript", "Frontend", "E-commerce"],
+      githubUrl: "https://github.com/TOTEM-ABU/NornLightProject",
+      image:
+        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop&crop=center",
+    },
+    {
+      id: 5,
+      title: "FullStackRestarauntProject",
+      description:
+        "Restaurant Management System – FullStack Web App with user roles, order & product management, debt tracking, and responsive dashboard. Secure and feature-rich application.",
       technologies: [
+        "NestJS",
         "React",
         "TypeScript",
-        "Node.js",
-        "Express",
-        "Socket.io",
-        "MongoDB",
+        "FullStack",
+        "Management System",
       ],
-      githubUrl: "https://github.com/TOTEM-ABU/NornLightProject",
+      githubUrl: "https://github.com/TOTEM-ABU/FullStackRestarauntProject",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center",
     },
     {
       id: 6,
-      title: "E-Commerce API",
+      title: "FullStackAuthProject",
       description:
-        "Complete e-commerce backend API with product management, order processing, payment integration, and admin dashboard. Built with modern architecture and best practices.",
-      technologies: ["TypeScript", "Node.js", "Express", "MySQL", "Stripe API"],
-      githubUrl: "https://github.com/TOTEM-ABU/e-commerce-api",
-      image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center",
-    },
-    {
-      id: 7,
-      title: "Task Manager",
-      description:
-        "Advanced task management application with drag-and-drop interface, priority levels, deadline tracking, and team collaboration features. Built with React and Node.js.",
-      technologies: ["React", "TypeScript", "Node.js", "Express", "MongoDB"],
-      githubUrl: "https://github.com/TOTEM-ABU/task-manager",
-      image:
-        "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&h=250&fit=crop&crop=center",
-    },
-    {
-      id: 8,
-      title: "Blog API",
-      description:
-        "RESTful blog API with user authentication, content management, comment system, and search functionality. Features include markdown support and image upload.",
-      technologies: ["NestJS", "TypeScript", "PostgreSQL", "JWT", "Multer"],
-      githubUrl: "https://github.com/TOTEM-ABU/blog-api",
+        "FullStack Auth App with registration, OTP email verification, and secure login. Built using NestJS & React with comprehensive authentication and authorization features.",
+      technologies: [
+        "NestJS",
+        "React",
+        "TypeScript",
+        "Authentication",
+        "OTP Verification",
+      ],
+      githubUrl: "https://github.com/TOTEM-ABU/FullStackAuthProject",
       image:
         "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop&crop=center",
     },
