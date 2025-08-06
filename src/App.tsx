@@ -26,7 +26,7 @@ function App() {
       technologies: ["Node.js", "JavaScript", "MVC Architecture", "REST API"],
       githubUrl: "https://github.com/nuriddinmahmud/SearchLesson",
       image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&crop=center",
+        "/swagger.png",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ function App() {
       technologies: ["NestJS", "TypeScript", "Authentication", "REST API"],
       githubUrl: "https://github.com/TOTEM-ABU/OLX-backend",
       image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop&crop=center",
+        "/swagger.png",
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ function App() {
       technologies: ["TypeScript", "React", "Node.js", "Service Management"],
       githubUrl: "https://github.com/TOTEM-ABU/ServicesProject",
       image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop&crop=center",
+        "/swagger.png",
     },
     {
       id: 4,
@@ -56,7 +56,7 @@ function App() {
       technologies: ["React", "JavaScript", "Frontend", "E-commerce"],
       githubUrl: "https://github.com/TOTEM-ABU/NornLightProject",
       image:
-        "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop&crop=center",
+        "/NornLight.png",
     },
     {
       id: 5,
@@ -72,7 +72,7 @@ function App() {
       ],
       githubUrl: "https://github.com/TOTEM-ABU/FullStackRestarauntProject",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&crop=center",
+        "/Restaraunt.png",
     },
     {
       id: 6,
@@ -88,7 +88,7 @@ function App() {
       ],
       githubUrl: "https://github.com/TOTEM-ABU/FullStackAuthProject",
       image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop&crop=center",
+        "/swagger.png",
     },
   ];
 
