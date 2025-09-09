@@ -20,13 +20,12 @@ function App() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "SearchLesson",
+      title: "SearchLessons",
       description:
         "Node.js backend project designed to handle lesson or file search functionality. It follows the MVC architecture and provides advanced search capabilities with intelligent filtering and categorization.",
       technologies: ["Node.js", "JavaScript", "MVC Architecture", "REST API"],
       githubUrl: "https://github.com/nuriddinmahmud/SearchLesson",
-      image:
-        "/swagger.png",
+      image: "/swagger.png",
     },
     {
       id: 2,
@@ -35,32 +34,43 @@ function App() {
         "Backend project for a marketplace app with authentication and product features. Built with NestJS framework, featuring user management, product listings, and secure API endpoints.",
       technologies: ["NestJS", "TypeScript", "Authentication", "REST API"],
       githubUrl: "https://github.com/TOTEM-ABU/OLX-backend",
-      image:
-        "/swagger.png",
+      image: "/swagger.png",
     },
     {
       id: 3,
-      title: "ServicesProject",
+      title: "Services Project",
       description:
         "A platform that allows users to order services (like plumbing, gardening, etc.) along with necessary tools. Designed to simplify workflows for craftsmen and service providers.",
       technologies: ["TypeScript", "React", "Node.js", "Service Management"],
       githubUrl: "https://github.com/TOTEM-ABU/ServicesProject",
-      image:
-        "/swagger.png",
+      image: "/swagger.png",
     },
     {
       id: 4,
-      title: "NornLightProject",
+      title: "NornLight Project",
       description:
         "Modern frontend website for showcasing and selling chandeliers and lighting products. Built with React, featuring beautiful UI/UX design and e-commerce functionality.",
       technologies: ["React", "JavaScript", "Frontend", "E-commerce"],
       githubUrl: "https://github.com/TOTEM-ABU/NornLightProject",
-      image:
-        "/NornLight.png",
+      image: "/NornLight.png",
     },
     {
       id: 5,
-      title: "FullStackRestarauntProject",
+      title: "Rent Market project",
+      description:
+        "A modern website for renting and leasing products, built with Next.js. Features user authentication, product listings, and a responsive design for seamless browsing.",
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "Redux-toolkit",
+        "tanstack-query",
+      ],
+      githubUrl: "https://github.com/ziyodbek0300/n19-rentmarket",
+      image: "/rentmarketproject.png",
+    },
+    {
+      id: 6,
+      title: "Full Stack Restaraunt Project",
       description:
         "Restaurant Management System – FullStack Web App with user roles, order & product management, debt tracking, and responsive dashboard. Secure and feature-rich application.",
       technologies: [
@@ -71,12 +81,11 @@ function App() {
         "Management System",
       ],
       githubUrl: "https://github.com/TOTEM-ABU/FullStackRestarauntProject",
-      image:
-        "/Restaraunt.png",
+      image: "/Restaraunt.png",
     },
     {
-      id: 6,
-      title: "FullStackAuthProject",
+      id: 7,
+      title: "Full Stack Auth Project",
       description:
         "FullStack Auth App with registration, OTP email verification, and secure login. Built using NestJS & React with comprehensive authentication and authorization features.",
       technologies: [
@@ -87,13 +96,48 @@ function App() {
         "OTP Verification",
       ],
       githubUrl: "https://github.com/TOTEM-ABU/FullStackAuthProject",
-      image:
-        "/swagger.png",
+      image: "/authproject.png",
+    },
+    {
+      id: 8,
+      title: "Full Stack Twitter Clone",
+      description:
+        "FullStackTwitterClone – A modern Twitter clone with backend (Express + MongoDB) and frontend with React, complete with authentication, posting, follow/unfollow, notifications, media uploads, and real-time updates. Clean architecture, Docker-ready, and ideal for full-stack portfolio.",
+      technologies: [
+        "JavaScript",
+        "JWT",
+        "MongoDB",
+        "React",
+        "Mongoose",
+        "Express",
+        "Bcrypt",
+        "Cloudinary",
+        "Node.js",
+        "DaisyUI",
+      ],
+      githubUrl: "https://github.com/TOTEM-ABU/FullStackTwitterClone",
+      image: "/twitter.png",
+    },
+    {
+      id: 9,
+      title: "Full Stack Code Museum Project",
+      description:
+        "A Website that showcases a collection of programming languages, frameworks, and technologies. Built with a modern tech stack including NestJS, React, and MongoDB, featuring user authentication and responsive design.",
+      technologies: [
+        "JavaScript",
+        "NestJS",
+        "React",
+        "JWT",
+        "Bcrypt",
+        "Prisma",
+        "PostgreSQL",
+      ],
+      githubUrl: "https://github.com/TOTEM-ABU/CodeMuseum",
+      image: "/codemuseumproject.png",
     },
   ];
 
   const skills = [
-    // Backend Skills
     { name: "Node.js", level: 90, category: "backend" },
     { name: "Express.js", level: 85, category: "backend" },
     { name: "NestJS", level: 80, category: "backend" },
@@ -106,7 +150,6 @@ function App() {
     { name: "bcrypt", level: 75, category: "backend" },
     { name: "Passport.js", level: 70, category: "backend" },
     { name: "Multer", level: 75, category: "backend" },
-    // Frontend Skills
     { name: "React.js", level: 85, category: "frontend" },
     { name: "Next.js", level: 80, category: "frontend" },
     { name: "Redux", level: 75, category: "frontend" },
@@ -117,7 +160,6 @@ function App() {
     { name: "Ant Design", level: 70, category: "frontend" },
     { name: "Tailwind CSS", level: 75, category: "frontend" },
     { name: "Responsive Design", level: 85, category: "frontend" },
-    // Database & Tools
     { name: "MongoDB", level: 75, category: "database" },
     { name: "PostgreSQL", level: 70, category: "database" },
     { name: "MySQL", level: 80, category: "database" },
