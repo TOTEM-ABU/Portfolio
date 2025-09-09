@@ -177,7 +177,6 @@ function App() {
     }
   };
 
-  // Cursor animation
   useEffect(() => {
     const cursor = document.createElement("div");
     const cursorFollower = document.createElement("div");
@@ -205,7 +204,6 @@ function App() {
     };
   }, []);
 
-  // Particle effects
   useEffect(() => {
     const particlesContainer = document.createElement("div");
     particlesContainer.className = "particles";
@@ -236,7 +234,6 @@ function App() {
     };
   }, []);
 
-  // Scroll-triggered animations
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -251,7 +248,6 @@ function App() {
       });
     }, observerOptions);
 
-    // Observe all elements with scroll animation classes
     const animatedElements = document.querySelectorAll(
       ".scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-in, .scroll-rotate-in"
     );
@@ -267,7 +263,6 @@ function App() {
     };
   }, []);
 
-  // Parallax effect
   useEffect(() => {
     const handleParallax = () => {
       const scrolled = window.pageYOffset;
@@ -284,7 +279,6 @@ function App() {
     return () => window.removeEventListener("scroll", handleParallax);
   }, []);
 
-  // Scroll progress indicator
   useEffect(() => {
     const updateScrollProgress = () => {
       const scrollTop = window.scrollY;
@@ -325,13 +319,11 @@ function App() {
 
   return (
     <div className="app">
-      {/* Scroll Progress Indicator */}
       <div
         className="scroll-indicator"
         style={{ transform: `scaleX(${scrollProgress / 100})` }}
       />
 
-      {/* Navigation */}
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
@@ -390,7 +382,6 @@ function App() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section id="home" className="hero">
         <div className="hero-content">
           <div className="hero-text">
@@ -432,7 +423,6 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="about">
         <div className="container">
           <h2 className="section-title scroll-fade-in">About Me</h2>
@@ -472,14 +462,12 @@ function App() {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="skills">
         <div className="container">
           <h2 className="section-title scroll-fade-in">
             Skills & Technologies
           </h2>
 
-          {/* Skill Category Filter */}
           <div className="skill-filters scroll-slide-left">
             <button
               className={`skill-filter ${
@@ -544,7 +532,6 @@ function App() {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section id="projects" className="projects">
         <div className="container">
           <h2 className="section-title scroll-fade-in">Featured Projects</h2>
@@ -632,7 +619,7 @@ function App() {
               <div className="resume-download scroll-scale-in">
                 <a
                   href="/resume.pdf"
-                  download="AbuCoder_Resume.pdf"
+                  download="FullStackResume.pdf"
                   className="resume-btn"
                 >
                   <i className="fas fa-download"></i>
@@ -674,7 +661,6 @@ function App() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="footer">
         <div className="container">
           <p>&copy; 2025 AbuCoder. All rights reserved.</p>
