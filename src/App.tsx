@@ -20,12 +20,26 @@ function App() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "SearchLessons",
+      title: "CineIQ",
       description:
-        "Node.js backend project designed to handle lesson or file search functionality. It follows the MVC architecture and provides advanced search capabilities with intelligent filtering and categorization.",
-      technologies: ["Node.js", "JavaScript", "MVC Architecture", "REST API"],
-      githubUrl: "https://github.com/nuriddinmahmud/SearchLesson",
-      image: "/swagger.png",
+        "CineIQ – Full-Stack movie discovery platform with category-based search, actor lookup, watch history, trailers, and smart recommendations in a modern, responsive UI.",
+      technologies: [
+        "react",
+        "dotenv",
+        "express",
+        "react-router",
+        "mongoose",
+        "axios",
+        "jsonwebtoken",
+        "cookie-parser",
+        "bcryptjs",
+        "react-player",
+        "tailwindcss",
+        "zustand",
+        "lucide-react",
+      ],
+      githubUrl: "https://github.com/TOTEM-ABU/CineIQ",
+      image: "/CineIQ.png",
     },
     {
       id: 2,
@@ -47,11 +61,11 @@ function App() {
     },
     {
       id: 4,
-      title: "NornLight Project",
+      title: "NornLight",
       description:
         "Modern frontend website for showcasing and selling chandeliers and lighting products. Built with React, featuring beautiful UI/UX design and e-commerce functionality.",
       technologies: ["React", "JavaScript", "Frontend", "E-commerce"],
-      githubUrl: "https://github.com/TOTEM-ABU/NornLightProject",
+      githubUrl: "https://github.com/UmarAxrarov/React-Project",
       image: "/NornLight.png",
     },
     {
@@ -134,6 +148,53 @@ function App() {
       ],
       githubUrl: "https://github.com/TOTEM-ABU/CodeMuseum",
       image: "/codemuseumproject.png",
+    },
+    {
+      id: 9,
+      title: "AbuShop",
+      description:
+        "🏪AbuShop– A modern full-stack eCommerce app built with React, Express, and MongoDB, featuring secure auth, product management, analytics dashboard, shopping cart, and Stripe payments — designed with clean architecture and scalable, responsive UI.",
+      technologies: [
+        "nodejs",
+        "javascript",
+        "dotenv",
+        "stripe",
+        "reactjs",
+        "mongoose",
+        "expressjs",
+        "cloudinary",
+        "jsonwebtoken",
+        "cookie-parser",
+        "ioredis",
+        "bcryptjs",
+        "tailwindcss",
+        "zustand",
+      ],
+      githubUrl: "https://github.com/TOTEM-ABU/AbuShop",
+      image: "/abushop.png",
+    },
+    {
+      id: 9,
+      title: "LearnNet",
+      description:
+        "🗨 LearnNet – A modern full-stack real-time chat application with video calling capabilities built using the MERN stack (MongoDB, Express, React, Node.js) and Stream Chat API, featuring secure authentication, friend requests, real-time messaging, video calling, dark/light theme toggle, and responsive UI design. ",
+      technologies: [
+        "react",
+        "nodejs",
+        "jwt",
+        "express",
+        "mongodb",
+        "reactrouter",
+        "tailwindcss",
+        "vite",
+        "zustand",
+        "react-sdk",
+        "daisyui",
+        "tanstack-react-query",
+        "streamchat-api",
+      ],
+      githubUrl: "https://github.com/TOTEM-ABU/LearnNet",
+      image: "/learnnet1.png",
     },
   ];
 
@@ -249,7 +310,7 @@ function App() {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll(
-      ".scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-in, .scroll-rotate-in"
+      ".scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale-in, .scroll-rotate-in",
     );
 
     animatedElements.forEach((el) => {
@@ -507,7 +568,7 @@ function App() {
             {skills
               .filter(
                 (skill) =>
-                  skillCategory === "all" || skill.category === skillCategory
+                  skillCategory === "all" || skill.category === skillCategory,
               )
               .map((skill, index) => (
                 <div key={index} className={`skill-item scroll-fade-in`}>
@@ -663,7 +724,9 @@ function App() {
 
       <footer className="footer">
         <div className="container">
-          <p>&copy; 2025 AbuCoder. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} AbuCoder. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
